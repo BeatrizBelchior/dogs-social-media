@@ -13,7 +13,8 @@ const Header = () => {
                 <Link className="logo" to="/" area-label="Dogs - Home">
                     <Dogs />
                 </Link>
-                {data ? (<Link className="login" to="/conta">{data.nome}</Link>) :
+                {data ? (<Link className="login" to="/conta">{data.nome}
+                </Link>) :
                     (<Link className="login" to="/login">Login / Criar</Link>)}
             </nav>
         </header>

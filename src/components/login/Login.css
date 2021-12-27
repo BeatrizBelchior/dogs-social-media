@@ -1,0 +1,30 @@
+.formLogin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    gap: 2rem;
+}
+
+.formLogin::before {
+    display: block;
+    content: '';
+    background: url(../../Assets/login.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.forms {
+    max-width: 30rem;
+    padding: 1rem;
+}
+
+@media (max-width: 40rem) {
+    .formLogin {
+        grid-template-columns: 1fr;
+    }
+    .formLogin::before {
+        display: none;
+    }
+    .forms {
+        max-width: 100%;
+    }
+}
