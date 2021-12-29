@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+import FeedModal from './FeedModal';
+import FeedPhotos from './FeedPhotos';
 
 const Feed = () => {
+    const [modalPhoto, setModalPhoto] = React.useState(null)
+
     return (
-        <h2>Feed!!</h2>
+        <div>
+            {modalPhoto && <FeedModal photo={modalPhoto} />}
+            <FeedPhotos setModalPhoto={setModalPhoto} />
+        </div>
     )
 }
 
