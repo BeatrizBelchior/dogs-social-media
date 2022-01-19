@@ -6,6 +6,7 @@ import useForm from '../../hooks/useForm';
 import { UserContext } from '../../UserContext';
 import Error from '../../elements/Error';
 import './LoginForm.css';
+import Head from '../../elements/Head';
 
 const LoginForm = () => {
     const username = useForm();
@@ -23,12 +24,13 @@ const LoginForm = () => {
 
     return (
         <section className='animeLeft'>
+            <Head title="Login" />
             <h1 className='title'>Login</h1>
             <form className='form' onSubmit={handleSubmit}>
                 <Input label="Usuário" type="text" name="username" {...username} />
                 <Input label="Senha" type="password" name="password" {...password} />
                 {loading ? (<Button disabled>Entrando...</Button>) : (<Button>Entrar</Button>)}
-                <Error error={error} />
+                <Error error={error && 'Dados incorretos'} />
             </form>
             <Link className='perdeu' to="/login/perdeu">Perdeu a senha?</Link>
             <div className='cadastro'>
